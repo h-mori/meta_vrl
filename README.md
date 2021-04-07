@@ -31,7 +31,9 @@ You need to specify an input R1 fastq file, an input R2 fastq file, and an outpu
 
 ## Input and Output
 Input files of META_VRL are paired-end fastq files.
+
 The output file of META_VRL is a contig FASTA file (file name is inputR1filename.final.contigs.cleaned.2000.fa).
+In default, the contig larger than 2,000 base are outputted.
 
 
 ## Dependencies
