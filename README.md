@@ -10,7 +10,7 @@ http://palaeo.nig.ac.jp/Resources/META_VRL/Wuhan-Hu-1.fasta
 For KRAKEN2REF, please download and tar -zxvf from following web link.
 http://palaeo.nig.ac.jp/Resources/META_VRL/GRCh38.Wuhan.tar.gz
 
-You need to specify the places of MINIMAP2REF and KRAKEN2REF in NIG supercomputer in the META_VAL.sh file.
+You need to specify the places of MINIMAP2REF and KRAKEN2REF in NIG supercomputer in the META_VRL.sh file.
 
 ## Usage
 ```bash
@@ -18,7 +18,7 @@ mkdir Testdir1
 qsub -l s_vmem=10G -l mem_req=10G /home/hoge/META_VRL.sh /home/hoge/SRR10903401_1.fastq /home/hoge/SRR10903401_2.fastq /home/hoge/Testdir1
 ```
 Please replace hoge to your username in NIG supercomputer.
-Also, please replace hoge in META_VAL.sh to your username in NIG supercomputer.
+Also, please replace hoge in META_VRL.sh to your username in NIG supercomputer.
 The s_vmem and mem_req are depended on the complexity of the query fastq files. Usually, 10G is enough.
 You need to specify an input R1 fastq file, an input R2 fastq file, and an output directory.
 
