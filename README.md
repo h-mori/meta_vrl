@@ -26,3 +26,14 @@ Please replace hoge to your username in NIG supercomputer.
 Also, please replace hoge in META_VAL.sh to your username in NIG supercomputer.
 The s_vmem and mem_req are depend on the complexity of the query fastq files. Usually, 10G is enough.
 You need to specify an input R1 fastq file, an input R2 fastq file, and an output directory.
+
+## Dependencies
+META_VRL uses
+### fastp
+### Kraken2
+### MEGAHIT
+### Minimap2
+### samtools
+### seqkit
+Since the singularity containers of all of these tools exist in NIG supercomputer, you don't need to install and specify the file direction (already each container's file direction has coded in META_VRL.sh).
+
