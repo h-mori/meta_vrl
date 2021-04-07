@@ -32,6 +32,7 @@ The details of the samples are described in https://www.ncbi.nlm.nih.gov/sra/SRR
 
 The output file of META_VRL is a contig FASTA file (file name is inputR1filename.final.contigs.cleaned.2000.fa).
 In default, the contig larger than 2,000 base are outputted.
+
 An example of an output file is https://github.com/h-mori/meta_vrl/blob/main/SRR10903401_1.fastq.final.contigs.cleaned.2000.fa
 
 
