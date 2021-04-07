@@ -12,13 +12,6 @@ http://palaeo.nig.ac.jp/Resources/META_VRL/GRCh38.Wuhan.tar.gz
 
 You need to specify the places of MINIMAP2REF and KRAKEN2REF in NIG supercomputer in the META_VAL.sh file.
 
-## Test data
-You can obtain test query fastq files from
-http://palaeo.nig.ac.jp/Resources/META_VRL/SRR10903401_1.fastq.gz
-http://palaeo.nig.ac.jp/Resources/META_VRL/SRR10903401_2.fastq.gz
-
-The details of the fastq files are described in https://www.ncbi.nlm.nih.gov/sra/SRR10903401
-
 ## Usage
 ```bash
 mkdir Testdir1
@@ -31,9 +24,14 @@ You need to specify an input R1 fastq file, an input R2 fastq file, and an outpu
 
 ## Input and Output
 The input files of META_VRL are paired-end fastq files.
+Examples of paired-end fastq files are 
+http://palaeo.nig.ac.jp/Resources/META_VRL/SRR10903401_1.fastq.gz
+http://palaeo.nig.ac.jp/Resources/META_VRL/SRR10903401_2.fastq.gz
+The details of the samples are described in https://www.ncbi.nlm.nih.gov/sra/SRR10903401
 
 The output file of META_VRL is a contig FASTA file (file name is inputR1filename.final.contigs.cleaned.2000.fa).
 In default, the contig larger than 2,000 base are outputted.
+An example of an output file is https://github.com/h-mori/meta_vrl/blob/main/SRR10903401_1.fastq.final.contigs.cleaned.2000.fa
 
 
 ## Dependencies
