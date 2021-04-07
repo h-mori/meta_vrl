@@ -27,6 +27,7 @@ The input files of META_VRL are paired-end fastq files.
 Examples of paired-end fastq files are 
 http://palaeo.nig.ac.jp/Resources/META_VRL/SRR10903401_1.fastq.gz
 http://palaeo.nig.ac.jp/Resources/META_VRL/SRR10903401_2.fastq.gz
+
 The details of the samples are described in https://www.ncbi.nlm.nih.gov/sra/SRR10903401
 
 The output file of META_VRL is a contig FASTA file (file name is inputR1filename.final.contigs.cleaned.2000.fa).
