@@ -19,7 +19,7 @@ qsub -l s_vmem=10G -l mem_req=10G /home/hoge/META_VRL.sh /home/hoge/SRR10903401_
 ```
 Please replace hoge to your username in NIG supercomputer.
 Also, please replace hoge in META_VAL.sh to your username in NIG supercomputer.
-The s_vmem and mem_req are depend on the complexity of the query fastq files. Usually, 10G is enough.
+The s_vmem and mem_req are depended on the complexity of the query fastq files. Usually, 10G is enough.
 You need to specify an input R1 fastq file, an input R2 fastq file, and an output directory.
 
 ## Input and Output
