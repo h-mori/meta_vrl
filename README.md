@@ -4,6 +4,8 @@ A viral genome reconstruction tool from metagenomic and metatranscriptomic seque
 ## Reference data
 For MINIMAP2REF, please download and use a genome sequence data of Wuhan-Hu-1 (MN908947.3)
 https://www.ncbi.nlm.nih.gov/nuccore/MN908947.3?report=fasta
+or
+http://palaeo.nig.ac.jp/Resources/META_VRL/Wuhan-Hu-1.fasta
 
 For KRAKEN2REF, please download and tar -zxvf from following web link.
 http://palaeo.nig.ac.jp/Resources/META_VRL/GRCh38.Wuhan.tar.gz
