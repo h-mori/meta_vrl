@@ -30,7 +30,7 @@ The s_vmem and mem_req are depend on the complexity of the query fastq files. Us
 You need to specify an input R1 fastq file, an input R2 fastq file, and an output directory.
 
 ## Input and Output
-Input files of META_VRL are paired-end fastq files.
+The input files of META_VRL are paired-end fastq files.
 
 The output file of META_VRL is a contig FASTA file (file name is inputR1filename.final.contigs.cleaned.2000.fa).
 In default, the contig larger than 2,000 base are outputted.
