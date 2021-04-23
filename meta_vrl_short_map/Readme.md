@@ -3,7 +3,7 @@ A viral genome reconstruction tool from metagenomic and metatranscriptomic seque
 META_VRL_Short_Map is a pipeline for the analysis of paired-end short reads.
 This pipeline conducts a reference-based consensus sequence generation and a SNV calling analysis.
 
-## Reference data (Be careful! This section is a copy-pasted description from META_VRL's description and yet under development)
+## Reference data
 For BWAREF, please download and use a RefSeq version of genome sequence data of Wuhan-Hu-1 (NC_045512.2)
 https://www.ncbi.nlm.nih.gov/nuccore/1798174254?report=fasta
 Since snpEff uses the RefSeq version of Wuhan-Hu-1 genome for the snpEff reference database, we use NC_045512.2 not MN908947.3 in the SNP reference.
