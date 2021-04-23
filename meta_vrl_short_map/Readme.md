@@ -38,7 +38,7 @@ An example of an output file is ...
 
 
 ## Dependencies
-META_VRL uses
+META_VRL_Short_Map uses
 ### fastp
 ### BWA
 ### samtools
