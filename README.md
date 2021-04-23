@@ -23,7 +23,7 @@ The s_vmem and mem_req are depended on the complexity of the query fastq files. 
 You need to specify an input R1 fastq file, an input R2 fastq file, and an output directory.
 
 ## Input and Output
-The input files of META_VRL are paired-end fastq files.
+The input files of META_VRL are Illumina paired-end fastq files.
 Examples of paired-end fastq files are 
 http://palaeo.nig.ac.jp/Resources/META_VRL/SRR10903401_1.fastq.gz
 http://palaeo.nig.ac.jp/Resources/META_VRL/SRR10903401_2.fastq.gz
