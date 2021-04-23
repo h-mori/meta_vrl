@@ -33,8 +33,8 @@ http://palaeo.nig.ac.jp/Resources/META_VRL/SRR10903401_2.fastq.gz
 The details of the samples are described in https://www.ncbi.nlm.nih.gov/sra/SRR10903401
 
 The output file of META_VRL_Short_Map is a consensus FASTA file (file name is inputR1filename.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.0.5.anno.vcf.fasta).
-
-An example of an output file is https://github.com/h-mori/meta_vrl/blob/main/SRR10903401_1.fastq.final.contigs.cleaned.2000.fa
+and ...
+An example of an output file is ...
 
 
 ## Dependencies
