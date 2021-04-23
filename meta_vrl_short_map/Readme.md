@@ -30,6 +30,7 @@ The details of the samples are described in https://www.ncbi.nlm.nih.gov/sra/SRR
 
 The output files of META_VRL_Short_Map are 
 a consensus FASTA file https://github.com/h-mori/meta_vrl/blob/main/meta_vrl_short_map/SRR10903401_1.fastq.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.0.5.anno.vcf.fasta
+Please be careful! The sequence name of the consensus FASTA file is automatically copied from the reference sequence name (NC_045512.2).
 
 a Pangolin result using the consensus FASTA file https://github.com/h-mori/meta_vrl/blob/main/meta_vrl_short_map/Test.fastq.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.0.5.anno.vcf.fasta.csv
 
