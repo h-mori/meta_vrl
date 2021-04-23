@@ -43,7 +43,7 @@ META_VRL_Short_Map uses
 ### BWA
 ### samtools
 ### Picard
-### lofreq
+### LoFreq
 ### snpEff
 ### bcftools
 
