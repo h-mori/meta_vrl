@@ -4,15 +4,11 @@ META_VRL_Short_Map is a pipeline for the analysis of paired-end short reads.
 This pipeline conducts a reference-based consensus sequence generation and a SNV calling analysis.
 
 ## Reference data (Be careful! This section is a copy-pasted description from META_VRL's description and yet under development)
-For MINIMAP2REF, please download and use a genome sequence data of Wuhan-Hu-1 (MN908947.3)
-https://www.ncbi.nlm.nih.gov/nuccore/MN908947.3?report=fasta
-or
-http://palaeo.nig.ac.jp/Resources/META_VRL/Wuhan-Hu-1.fasta
+For BWAREF, please download and use a RefSeq version of genome sequence data of Wuhan-Hu-1 (NC_045512.2)
+https://www.ncbi.nlm.nih.gov/nuccore/1798174254?report=fasta
+Since snpEff uses the RefSeq version of Wuhan-Hu-1 genome for the snpEff reference database, we use NC_045512.2 not MN908947.3 in the SNP reference.
 
-For KRAKEN2REF, please download and tar -zxvf from following web link.
-http://palaeo.nig.ac.jp/Resources/META_VRL/GRCh38.Wuhan.tar.gz
-
-You need to specify the places of MINIMAP2REF and KRAKEN2REF in NIG supercomputer in the META_VRL.sh file.
+You need to specify the places of BWAREF in NIG supercomputer in the meta_vrl_short_map.sh file.
 
 ## Usage
 ```bash
@@ -32,9 +28,10 @@ http://palaeo.nig.ac.jp/Resources/META_VRL/SRR10903401_2.fastq.gz
 
 The details of the samples are described in https://www.ncbi.nlm.nih.gov/sra/SRR10903401
 
-The output file of META_VRL_Short_Map is a consensus FASTA file (file name is inputR1filename.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.0.5.anno.vcf.fasta).
-and ...
-An example of an output file is ...
+The output files of META_VRL_Short_Map are 
+a consensus FASTA file (file name is inputR1filename.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.0.5.anno.vcf.fasta).
+a Pangolin result using the consensus FASTA file https://github.com/h-mori/meta_vrl/blob/main/meta_vrl_short_map/Test.fastq.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.0.5.anno.vcf.fasta.csv
+an annotated VCF file using snpEff https://github.com/h-mori/meta_vrl/blob/main/meta_vrl_short_map/Test.fastq.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.0.5.anno.vcf 
 
 
 ## Dependencies
