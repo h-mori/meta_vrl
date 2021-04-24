@@ -49,8 +49,6 @@ singularity exec -B $3/tmp:/tmp -B $3/data:/usr/local/share/snpeff-5.0-0/data /u
 singularity exec /usr/local/biotools/b/bcftools\:1.9--ha228f0b_4 bcftools view $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.0.5.anno.vcf -Oz -o $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.0.5.anno.vcf.gz
 singularity exec /usr/local/biotools/b/bcftools\:1.9--ha228f0b_4 bcftools index $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.0.5.anno.vcf.gz
 singularity exec /usr/local/biotools/b/bcftools\:1.9--ha228f0b_4 bcftools consensus -f $BWAREF $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.0.5.anno.vcf.gz -o $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.0.5.anno.vcf.fasta
+source /lustre6/public/vrl/activate_pangolin.sh
+pangolin $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.0.5.anno.vcf.fasta --outfile $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.0.5.anno.vcf.fasta.csv
 } >> "$LOGFILE" 2>&1
-
-##We want to add following pangolin command at the last step of this pipeline.
-##pangolin $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.0.5.anno.vcf.fasta --outfile $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.0.5.anno.vcf.fasta.csv
-
