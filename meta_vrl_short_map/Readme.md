@@ -46,5 +46,6 @@ META_VRL_Short_Map uses
 ### LoFreq
 ### snpEff
 ### bcftools
+### Pangolin
 
 Since the singularity containers of all of these tools exist in NIG supercomputer, you don't need to install and specify the file direction (already each container's file direction has coded in meta_vrl_short_map.sh).
