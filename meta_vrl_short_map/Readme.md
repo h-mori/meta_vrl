@@ -17,7 +17,7 @@ qsub -l s_vmem=32G -l mem_req=32G /home/hoge/META_VRL/meta_vrl_short_map.sh /hom
 ```
 Please replace hoge to your username in NIG supercomputer.
 Also, please replace hoge in meta_vrl_short_map.sh to your username in NIG supercomputer.
-The s_vmem and mem_req are depended on the complexity of the query fastq files. Usually, 32G is enough.
+The s_vmem and mem_req are depended on the complexity of the query fastq files. Usually, 32G is enough (bcftools and pangolin use more than 16GB RAM).
 You need to specify an input R1 fastq file, an input R2 fastq file, and an output directory.
 
 ## Input and Output
