@@ -43,6 +43,9 @@ META_VRL_Short_Map uses
 ### BWA
 ### samtools
 ### Picard
+### ngsutils
+### bedtools
+### pyfaidx
 ### LoFreq
 ### snpEff
 ### bcftools
