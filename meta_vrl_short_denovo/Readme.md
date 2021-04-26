@@ -38,7 +38,7 @@ An example of an output file is https://github.com/h-mori/meta_vrl/blob/main/SRR
 
 
 ## Dependencies
-META_VRL uses
+META_VRL_Short_denovo uses
 ### fastp
 ### Kraken2
 ### MEGAHIT
