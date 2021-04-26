@@ -45,6 +45,9 @@ singularity exec /usr/local/biotools/s/samtools\:1.11--h6270b1f_0 samtools view 
 singularity exec /usr/local/biotools/s/samtools\:1.11--h6270b1f_0 samtools sort $3/$DE0.final.contigs.fa.sam.mapped.bam > $3/$DE0.final.contigs.fa.sam.mapped.bam.sort.bam
 singularity exec /usr/local/biotools/s/samtools\:1.11--h6270b1f_0 samtools fasta -n -F 0x900 $3/$DE0.final.contigs.fa.sam.mapped.bam > $3/$DE0.final.contigs.cleaned.fa
 singularity exec /usr/local/biotools/s/seqkit\:0.13.2--0 seqkit seq $3/$DE0.final.contigs.cleaned.fa -m 2000 > $3/$DE0.final.contigs.cleaned.2000.fa
+source /lustre6/public/vrl/activate_pangolin.sh
+pangolin $3/$DE0.final.contigs.cleaned.2000.fa --outfile $3/$DE0.final.contigs.cleaned.2000.fa.csv
+
 rm -fr $3/Assemble.MEGAHIT
 rm -f $3/$DE0 $3/$DE1 $3/$DE0.qf.fastq $3/$DE1.qf.fastq $3/cseqs_1.fq $3/cseqs_2.fq $3/cseqs_1.virus2.fq $3/cseqs_2.virus2.fq $3/$DE0.final.contigs.fa.sam $3/$DE0.final.contigs.fa.sam.mapped.bam $3/$DE0.final.contigs.fa.sam.mapped.bam.sort.bam $3/$DE0.final.contigs.cleaned.fa
 } >> "$LOGFILE" 2>&1
