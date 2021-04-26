@@ -51,4 +51,21 @@ singularity exec /usr/local/biotools/b/bcftools\:1.10.2--hd2cd319_0 bcftools ind
 singularity exec /usr/local/biotools/b/bcftools\:1.10.2--hd2cd319_0 bcftools consensus -f $BWAREF $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.0.5.anno.vcf.gz -o $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.0.5.anno.vcf.fasta
 source /lustre6/public/vrl/activate_pangolin.sh
 pangolin $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.0.5.anno.vcf.fasta --outfile $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.0.5.anno.vcf.fasta.csv
+
+# make consensus FASTA for mapped region
+singularity exec --no-mount tmp /usr/local/biotools/s/samtools\:1.11--h6270b1f_0 samtools index $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam
+singularity exec --no-mount tmp /usr/local/biotools/n/ngsutils\:0.5.9--py27h516909a_2 bamutils expressed -ns $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam > $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.mapped.bed
+singularity exec --no-mount tmp /usr/local/biotools/b/bedtools\:2.30.0--hc088bd4_0 bedtools getfasta -fi $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.0.5.anno.vcf.fasta -bed $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.mapped.bed > $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.0.5.anno.vcf.mapped.fasta
+
+# make consensus FASTA with unmapped region masked
+singularity exec --no-mount tmp /usr/local/biotools/p/pyfaidx\:0.5.9.5--pyh3252c3a_0 faidx --transform chromsizes $BWAREF > $3/reference.size
+singularity exec --no-mount tmp /usr/local/biotools/b/bedtools\:2.30.0--hc088bd4_0 bedtools complement -i $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.mapped.bed -g $3/reference.size > $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.unmapped.bed
+singularity exec --no-mount tmp /usr/local/biotools/b/bedtools\:2.30.0--hc088bd4_0 bedtools maskfasta -fi $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.0.5.anno.vcf.fasta -bed $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.unmapped.bed -fo $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.0.5.anno.vcf.masked.fasta
+
+# calculate depth of coverage
+singularity exec --no-mount tmp /usr/local/biotools/p/pyfaidx\:0.5.9.5--pyh3252c3a_0 faidx --transform bed $BWAREF > $3/reference.bed
+singularity exec --no-mount tmp /usr/local/biotools/b/bedtools\:2.30.0--hc088bd4_0 coverageBed -d -a $3/reference.bed -b $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam | awk '$5>0{i++;sum += $5}END{print i"\t"sum"\t"sum/i}' > $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.depth_cov.txt
+# calculate breadth of coverage
+singularity exec --no-mount tmp /usr/local/biotools/b/bedtools\:2.30.0--hc088bd4_0 coverageBed -a $3/reference.bed -b $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam > $3/$DE0.qf.fastq.sam.mapped.bam.sort.bam.remdup.bam.breadth_cov.txt
+
 } >> "$LOGFILE" 2>&1
