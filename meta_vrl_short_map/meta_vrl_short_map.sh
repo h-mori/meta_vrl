@@ -5,7 +5,13 @@
 # input_R1=$1
 # input_R2=$2
 # output_dir=$3
-BWAREF=/home/hoge/META_VRL/NC_045512.2.fasta
+#BWAREF=/home/hoge/META_VRL/NC_045512.2.fasta
+if [ ! -f $ENVFILE ]; then
+  echo "No $ENVFILE file exist."
+  exit 1
+fi
+export $(cat $ENVFILE | xargs)
+
 LOGFILE="$3/meta_vrl_short_map.log"
 if [ $# -ne 3 ]; then
   echo "you specified $# arguments." 1>&2
