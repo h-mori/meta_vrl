@@ -45,6 +45,7 @@ singularity exec /usr/local/biotools/s/samtools\:1.11--h6270b1f_0 samtools sort 
 singularity exec /usr/local/biotools/s/samtools\:1.11--h6270b1f_0 samtools index $2/$DE0.sam.mapped.bam.sort.bam
 # need to activate conda medaka environment
 source ~/activate_conda.sh
+#eval "$(/home/hoge/miniconda3/bin/conda shell.bash hook)"
 conda activate medaka
 medaka_variant -s r941_min_high_g360 -i $2/$DE0.sam.mapped.bam.sort.bam -f $MINIMAPREF -o $2/$DE0.medaka -t 1 -m r941_min_high_g360
 medaka tools annotate $2/$DE0.medaka/round_1.vcf $MINIMAPREF $2/$DE0.sam.mapped.bam.sort.bam $2/$DE0.sam.mapped.bam.sort.bam.vcf
