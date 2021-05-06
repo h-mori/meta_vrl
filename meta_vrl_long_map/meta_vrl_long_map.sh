@@ -80,4 +80,5 @@ singularity exec --no-mount tmp /usr/local/biotools/b/bedtools\:2.30.0--hc088bd4
 singularity exec --no-mount tmp /usr/local/biotools/b/bedtools\:2.30.0--hc088bd4_0 bedtools maskfasta -fi $CONSENSUS -bed $DIR_MAP2CONSENSUS/$DE0.sam.mapped.bam.sort.bam.bed.unmapped.bed -fo $2/tmp.masked.fasta
 singularity exec --no-mount tmp /usr/local/biotools/s/seqkit\:0.15.0--0 seqkit replace -is -p "^n+|n+$" -r "" $2/tmp.masked.fasta > $2/$DE0.sam.mapped.bam.sort.bam.filter.anno.vcf.masked.fasta
 rm -f $2/tmp.masked.fasta
+pangolin $2/$DE0.sam.mapped.bam.sort.bam.filter.anno.vcf.masked.fasta --outfile $2/$DE0.sam.mapped.bam.sort.bam.filter.anno.vcf.masked.fasta.csv
 } >> "$LOGFILE" 2>&1
