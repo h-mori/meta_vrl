@@ -67,7 +67,7 @@ singularity exec --no-mount tmp /usr/local/biotools/b/bedtools\:2.30.0--hc088bd4
 CONSENSUS=$2/$DE0.sam.mapped.bam.sort.bam.filter.anno.vcf.fasta
 DIR_MAP2CONSENSUS=$2/map2consensus
 mkdir -p $DIR_MAP2CONSENSUS
-singularity exec /usr/local/biotools/m/minimap2\:2.17--hed695b0_3 minimap2 -ax map-ont $CONSENSUS $2/$DE0 -o $DIR_MAP2CONSENSUS/$DE0.sam
+singularity exec /usr/local/biotools/m/minimap2\:2.17--hed695b0_3 minimap2 -ax map-ont $CONSENSUS $2/$DE0.trim4.fastq -o $DIR_MAP2CONSENSUS/$DE0.sam
 singularity exec /usr/local/biotools/s/samtools\:1.11--h6270b1f_0 samtools view -Sbq 10 -F 0x04 $DIR_MAP2CONSENSUS/$DE0.sam > $DIR_MAP2CONSENSUS/$DE0.sam.mapped.bam
 singularity exec /usr/local/biotools/s/samtools\:1.11--h6270b1f_0 samtools sort $DIR_MAP2CONSENSUS/$DE0.sam.mapped.bam > $DIR_MAP2CONSENSUS/$DE0.sam.mapped.bam.sort.bam
 singularity exec /usr/local/biotools/s/samtools\:1.11--h6270b1f_0 samtools index $DIR_MAP2CONSENSUS/$DE0.sam.mapped.bam.sort.bam
