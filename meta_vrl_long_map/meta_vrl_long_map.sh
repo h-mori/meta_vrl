@@ -4,7 +4,7 @@
 # USAGE: this_shell_script inputfastq output_dir
 # inputfastq=$1
 # output_dir=$2
-MINIMAPREF=/home/hoge/NC_045512.2.fasta
+#MINIMAPREF=/home/hoge/NC_045512.2.fasta
 if [ ! -f $ENVFILE ]; then
   echo "No $ENVFILE file exist."
   exit 1

@@ -1,0 +1,9 @@
+#meta_vrl_short_denovo
+#KRAKEN2REF=/home/hoge/META_VRL/GRCh38.Wuhan
+#MINIMAP2REF=/home/hoge/META_VRL/WuHan.fasta
+KRAKEN2REF=/lustre6/public/reference/meta_vrl/GRCh38.Wuhan
+MINIMAP2REF=/lustre6/public/reference/meta_vrl/Wuhan-Hu-1.fasta
+SINGULARITY_BINDPATH=/lustre6/public/reference/meta_vrl
+#meta_vrl_short_map
+#BWAREF=/home/hoge/META_VRL/NC_045512.2.fasta
+BWAREF=/lustre6/public/reference/meta_vrl/NC_045512.2.fasta
